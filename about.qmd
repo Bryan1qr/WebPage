@@ -1,0 +1,109 @@
+---
+title: "Monitoreo de la Calidad de Aire en Tacna"
+author: "MESOMI"
+date: "2024-05-16"
+lang: es
+number-sections: true
+---
+
+# Delimitación de la cuenca atmosférica
+
+El núcleo de la cuenca atmosférica actual, se centra en la parte media del valle del río Caplina, flanqueada por las cadenas colinosas el Intiorko por la margen derecha y Chuzadal, Arunta y Piedras Blancas por la margen izquierda. Río arriba por las cuencas hidrográficas y micro cuencas, lejos de ser barreras, se comportan como aliviaderos o salidas de la contaminación generada en la ciudad y que no tiene chance de dispersión vertical, por el gran efecto del fenómeno de subsidencia (descenso de masas de aire que tienden a secarse y calentarse) impuesta por el Anticiclón y la circulación general de la atmósfera. El distrito y valle del río Sama, ha sido incluido en la cuenca atmosférica, con visión de futuro de los próximos 50 a 100 años, por sus mayores potenciales hídricos de la cuenca, suelos para la producción de alimentos y su tendencia a la conurbación con la capital de región.
+
+Dicha cuenca atmosférica tiene un área de **5 688,185** $Km^2$ comprendiendo los distritos de Tacna, Gregorio Albarracín, Alto de la Alianza, Ciudad Nueva, Pocollay, Calana parte baja de Pachía , Sama Inclán y Sama Las Yaras, donde se busca la coexistencia armónica entre la población objetivo y las fuentes contaminantes, debidamente gestionadas, mediante el establecimiento de un sistema permanente de monitoreo y vigilancia de la contaminación del aire, orientada a la implementación de medidas de mitigación y control, para la mejora de la calidad del aire en bien de la salud de la población.
+
+```{r}
+#| label: fig-Figura1
+#| fig-cap-location: bottom
+#| fig-cap: Cuenca atmosférica de Tacna
+#| code-fold: true
+#| fig-link: "https://docplayer.es/69334573-Influencia-de-los-parametros-meteorologicos-en-la-calidad-del-aire-senamhi-direccion-regional-tacna.html"
+knitr::include_graphics("img/cuenca.jpg")
+```
+
+# Normatividad de Calidad de Aire
+
+-   [Resolución Ministerial N° 205-2013-MINAM](https://www.fao.org/faolex/results/details/en/c/LEX-FAOC125748), Establecen las Cuencas Atmosféricas a las cuales les será aplicable los numerales 2.2 y 2.3 del artículo 2° del [Decreto Supremo N° 006-2013-MINAM](https://www.fao.org/faolex/results/details/en/c/LEX-FAOC125000) que aprueba Disposiciones Complementarias para la Aplicación del Estándar de Calidad Ambiental (ECA) de Aire.
+
+-   Mediante [Resolución Ministerial N° 339-2012-MINAM](https://www.minam.gob.pe/disposiciones/resolucion-ministerial-n-339-2012-minam/), se establecieron dieciocho nuevas zonas de atención prioritaria (ZAP) en el ámbito geográfico de las provincias de Abancay, Utcubamba, Cajamarca, Chachapoyas Huamanga, Huancavelica, Huánuco, Huaraz, Ica, San Román, Mariscal Nieto, Moyobamba, Tarapoto, Tumbes, Coronel Portillo, Tambopata, Puno y Tacna, para el diseño e implementación de planes de acción adicionales para la mejora de la calidad del aire, como consecuencia de ello, a la fecha se cuenta con un total de 31 ZAP en el país.
+
+-   La [Ley N° 28611 - Ley General del Ambiente](https://www.minam.gob.pe/wp-content/uploads/2013/06/ley-general-del-ambiente.pdf) define al estándar de calidad ambiental (ECA) como “la medida que establece el nivel de concentración o del grado de elementos, sustancias o parámetros físicos, químicos y biológicos presentes en el aire, agua y suelo en su condición de cuerpo receptor, que no representa riesgo significativo para la salud de las personas ni al ambiente”. Por lo tanto, para el caso de los contaminantes del aire, las concentraciones de cada uno de estos no deben superar su respectivo Estándar de Calidad Ambiental para Aire (ECA-aire) a fin de evitar problemas en la salud de las personas y el ambiente. Asimismo, los valores de los ECA-aire son establecidos por el Ministerio del Ambiente (MINAM) y estipulados en el [D.S. N° 003-2017-MINAM](https://sinia.minam.gob.pe/normas/aprueban-estandares-calidad-ambiental-eca-aire-establecen-disposiciones).
+
+|                                                                                                                                                                                         Parámetros                                                                                                                                                                                          |     Periódo      | Valor ($\mu$g/$m^3$) |                           Criterios de evaluación                            |                     Método de análisis [^1]                     |
+|:------------:|:-----------:|:-----------:|:---------------:|:------------:|
+|                                                                                                                                                                                     Benceno ($C_6H_6$)                                                                                                                                                                                      |      Anual       |          2           |                            Media aritmética anual                            |                     Cromatografía de gases                      |
+|                                                                                                                                                                                 Dióxido de Azufre ($SO_2$)                                                                                                                                                                                  |     24 horas     |         250          |                       No exceder más de 7 veces al año                       |         Fluorescencia ultravioleta (Método automático)          |
+|                                                                                                                                                                                Dióxido de Nitrógeno ($NO_2$)                                                                                                                                                                                |  1 hora / Anual  |      200 / 100       |          No exceder más de 24 veces al año / Media aritmética anual          |             Quimioluminiscencia (Método automático)             |
+|                                                                                                                                                              Material Particulado con diámetro menor a 2,5 micras ($PM_{2,5}$)                                                                                                                                                              |  1 hora / Anual  |       50 / 25        |          No exceder más de 7 veces al año / Media aritmética anual           |         Separación inercial o filtración (Gravimetría)          |
+|                                                                                                                                                               Material Particulado con diámetro menor a 10 micras ($PM_{10}$)                                                                                                                                                               |  1 hora / Anual  |       100 / 50       |          No exceder más de 7 veces al año / Media aritmética anual           |         Separación inercial o filtración (Gravimetría)          |
+| Mercurio Gaseoso Total (Hg) [^2] | 24 horas | 2 | No exceder | Espectrometría de absorción atómica de vapor frío (CVAAS) | | | | | | | | | o | | | | | | | | Espectrometría de fluorescencia atómica de vapor frío (CVAFS) | | | | | | | | o | | | | | | | | Espectrometría de absorción | | | | atómica Zeeman. | | | | (Métodos automáticos) |                  |                      |                                                                              |                                                                 |
+|                                                                                                                                                                                  Monóxido de Carbono (CO)                                                                                                                                                                                   | 1 hora / 8 horas |    30000 / 10000     |           No exceder más de 1 vez al año / Media aritmética móvil            |       Infrarrojo no dispersivo (NDIR) (Método automático)       |
+|                                                                                                                                                                                        Ozono ($O_3$)                                                                                                                                                                                        |     8 horas      |         100          |            Máxima media diaria. No exceder más de 24 veces al año            |    Fotometría de absorción ultravioleta (Método automático)     |
+|                                                                                                                                                                                   Plomo (Pb) en $PM_{10}$                                                                                                                                                                                   | Mensual / Anual  |         1,5 / 0,5          | No exceder más de 4 veces al año / Media aritmética de los valores mensuales | Método para $PM_{10}$ (Espectrofotometría de absorción atómica) |
+|                                                                                                                                                                                Sulfuro de Hidrógeno ($H_2S$)                                                                                                                                                                                |     24 horas     |         150          |                               Media aritmética                               |         Fluorescencia ultravioleta (Método automático)          |
+
+: Fuente: Decreto Supremo Nº 003-2017-MINAM
+
+[^1]: o método equivalente aprobado
+
+[^2]: El estándar de calidad ambiental para Mercurio Gaseoso Total entrará en vigencia al día siguiente de la publicación del Protocolo Nacional de Monitoreo de la Calidad Ambiental del Aire, de conformidad con lo establecido en la Sétima Disposición Complementaria Final del presente Decreto Supremo.
+
+
+# Parámetros de calidad de aire
+## Material particulado
+PM significa material particulado y es el término para una mezcla de partículas sólidas y gotas líquidas que se encuentran en el aire. Algunas partículas, como el polvo, la suciedad, el hollín o el humo, son lo suficientemente grandes u oscuras como para verse a simple vista. Otros son tan pequeños que sólo pueden detectarse con un microscopio electrónico.
+
+La Agencia de Protección Ambiental de los Estados Unidos (USEPA) establece la contaminación por particulas principalmente en dos categorías de tamaño, basadas en su capacidad de penetración en el pulmón, es así que, tenemos a las partículas gruesas ($PM_{10}$) con un diámetro aerodinámico igual o menor a 10 µm y las partículas finas ($PM_{2,5}$) con diámetro aerodinámico menor o igual a 2,5 µm (USEPA 2020). Estas partículas vienen en muchos tamaños y formas y pueden estar formadas por cientos de sustancias químicas diferentes. Algunos se emiten directamente desde una fuente, como obras de construcción, caminos sin pavimentar, campos, chimeneas o incendios. La mayoría de las partículas se forman en la atmósfera como resultado de reacciones complejas de sustancias químicas como el dióxido de azufre y los óxidos de nitrógeno, que son contaminantes emitidos por centrales eléctricas, industrias y automóviles.
+
+## Dióxido de azufre
+El SO2 es uno de los contaminantes más importantes, ya que resulta de la combustión de compuestos de azufre. Los volcanes y los océanos son las principales fuentes naturales de $SO_2$ (WHO 2018, USEPA 2019). Las emisiones antropogénicas de $SO_2$ provienen de la combustión de combustibles fósiles (principalmente carbón y aceites pesados), la quema de biomasa y la fundición de minerales que contienen azufre. El $SO_2$ y sus subproductos de oxidación se eliminan de la atmósfera por deposición húmeda y seca (precipitación ácida). Además, de estos procesos de transformación y eliminación, el $SO_2$ puede trasladarse a grandes distancias, causando contaminación transfronteriza (Pires et al. 2008).
+El $SO_2$ es un gas irritante cuando se inhala y en altas concentraciones, puede causar dificultades respiratorias en personas expuestas directamente. La absorción de SO2 en las membranas mucosas de la nariz y en el tracto respiratorio superior, resulta de su solubilidadven agua (WHO 2006).
+
+## Óxidos de Nitrógeno
+
+Los óxidos de nitrógeno (NOx) son un grupo de gases altamente reactivos. Están compuestos por átomos de nitrógeno y oxígeno en diferentes proporciones. El óxido de nitrógeno (NO) y el Dióxido de nitrógeno NO2 son los gases más importantes de este grupo y son considerados contaminantes significativos en la troposfera (Malley et al. 2018, WHO 2018). Estos gases resultan de los procesos de combustión, en automóviles, centrales eléctricas e industriales, comerciales y residenciales que queman combustibles fósiles.
+
+Los NOx tienen diversos efectos negativos (Pires et al. 2008, WHO 2018), como:
+
+* Reaccionan con otras sustancias en el aire para formar ácidos que caen a la tierra como lluvia, niebla, nieve o partículas secas;
+* El aumento de la emisión de nitrógeno en los cuerpos de agua, particularmente en los estuarios costeros, alterando el equilibrio químico de los nutrientes utilizados por las plantas y animales acuáticos;
+* Los NOx reaccionan con productos químicos orgánicos comunes para formar una amplia variedad de productos tóxicos, como radicales nitratos, nitroarenos y nitrosaminas;
+* El NO2 puede bloquear la transmisión de la luz y reducir la visibilidad;
+* El óxido nitroso (N2O), es un gas de efecto invernadero; y
+* En presencia de hidrocarburos y luz solar, los NOx contribuyen a la formación de O3
+troposférico, que puede causar problemas respiratorios graves.
+
+## Ozono troposférico
+
+El $O_3$ es un fuerte oxidante fotoquímico que se encuentra en la troposfera y en otras capas
+de la atmósfera. El $O_3$ tiene un papel importante en la estratosfera (protección contra la
+radiación ultravioleta), sin embargo, en la tropósfera esta molécula es irritante y reactiva
+teniendo impactos negativos en la salud humana, el clima, la vegetación y los materiales
+(WHO 2006, Pires et al. 2008).
+
+Los efectos sobre la salud humana pueden ser:
+
+* El daño a los tejidos del tracto respiratorio;
+* La muerte de las células pulmonares y aumento de las tasas de replicación celular
+(hipertermia).
+* Inflamación de las vías aéreas.
+* El aumento de los síntomas respiratorios, como tos, dolor torácico (subesternal),
+dificultad para respirar profundamente y, en algunos casos, dolores de cabeza o
+náuseas (WHO 2006).
+
+## Monóxido de carbono
+
+El CO es un gas incoloro, prácticamente inodoro, insípido y no irritante que es el resultado de la oxidación incompleta del carbono durante el proceso de la combustión (WHO 2018). Las fuentes principales son la combustión incompleta de combustible (que ocurre cuando la relación aire-combustible presenta valores bajos), las emisiones industriales y otras fuentes de combustión (como carbón, gas, madera y queroseno). Las fuentes naturales, como los volcanes, los gases naturales en las minas de carbón y los incendios forestales, también tienen una contribución importante (Pires et al. 2008, USEPA 2019). 
+
+Los efectos sobre la salud humana, asociados con la presencia de CO dependen de su concentración y la duración de la exposición. A bajas concentraciones, el CO causa fatiga en personas sanas y dolor en el pecho en personas con enfermedades cardíacas. A altas concentraciones, causa dolores de cabeza, confusión y náuseas (WHO 2018).
+
+Cuando se inhala, el CO se absorbe desde los pulmones hacia el torrente sanguíneo, donde forma un complejo con la hemoglobina (Hb), llamada carboxihemoglobina (COHb). La presencia de este complejo reduce la capacidad de transporte de oxígeno, causando hipoxia (bajo nivel de oxígeno disponible para los tejidos del cuerpo) (WHO 2006, 2018). El CO es uno de los contaminantes encontrados normalmente en la atmósfera que requiere medidas de prevención y control para garantizar una protección adecuada de la salud humana (Pires et al. 2008, USEPA 2019).
+
+## Sulfuro de Hidrogeno o Ácido sulfhídrico
+
+El ácido sulfhídrico (H2S) es un gas incoloro inflamable, de sabor algo dulce y olor a huevos podridos; en altas concentraciones puede ser venenoso. Otros nombres con los que se conoce incluyen ácido hidrosulfúrico, gas de alcantarilla y sulfuro de hidrógeno. Generalmente se puede detectar el olor a bajas concentraciones en el aire, entre 0.0005 y 0.3 partes por millón (ppm). 
+
+El ácido sulfhídrico ocurre en forma natural y como producto de actividades humanas. Se encuentra entre los gases de volcanes, manantiales de azufre, emanaciones de grietas submarinas, pantanos y cuerpos de aguas estancadas y en el petróleo crudo y gas natural. El ácido sulfhídrico también está asociado con alcantarillas municipales, plantas para el tratamiento de desagües, operaciones de manejo de cerdos y abonos y operaciones relacionadas con pulpa de madera y papel. Las fuentes industriales de ácido sulfhídrico incluyen a las refinerías de petróleo, plantas de gas natural, plantas petroquímicas, plantas de hornos de coque, plantas que procesan alimentos y curtidurías. En la boca y en el tracto gastrointestinal hay bacterias que producen ácido sulfhídrico al degradar materiales que contienen proteínas de origen animal o vegetal. El ácido sulfhídrico es uno de los componentes principales en el ciclo natural del azufre.
+
+# Evaluación de la calidad de aire
+## Monitoreos Realizados

@@ -1,0 +1,18 @@
+---
+title: "Bryan Quispe"
+about:
+  template: jolla
+  links: 
+    - icon: linkedin
+      url: https://www.linkedin.com/in/Bryan1qr
+    - icon: github
+      url: https://github.com/bryan1qr
+image: https://avatars.githubusercontent.com/u/91734085?v=4
+---
+
+# Biography
+
+I'm a Environmental Engineering's Bachelor. I studied Environmental Engineering in Jorge Basadre Grohmann university.
+
+
+I'm very interested in enviromental projects and contribute
